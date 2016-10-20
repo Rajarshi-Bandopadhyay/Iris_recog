@@ -30,11 +30,24 @@ def segment(arg):
 				elif arg[x-1,y+1] > 0 and res[x-1,y+1] > 0:
 					res[x,y] = res[x-1,y+1]
 					objlst[res[x,y]].append((x,y))
+				elif arg[x+1,y+1] > 0 and res[x+1,y+1] > 0:
+					res[x,y] = res[x+1,y+1]
+					objlst[res[x,y]].append((x,y))
 				else:
 					nobj += 1
 					objlst[nobj] = []
 					objlst[nobj].append((x,y))
 					res[x,y] = nobj
+					print((x,y))
+				
+				# Check for accidentl
 	return (res,objlst)
- 
+
+img = rgb2grey(imread('test1.png'))
+imshow(img)
+show()
+res, oblst = segment(img)
+imshow(res)
+show()
+print(len(oblst))
 
