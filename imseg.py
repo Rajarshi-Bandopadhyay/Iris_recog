@@ -43,11 +43,3 @@ def segment(arg):
 				# Check for accidentl
 	return (res,objlst)
 
-img = rgb2grey(imread('test1.png'))
-imshow(img)
-show()
-res, oblst = segment(img)
-imshow(res)
-show()
-print(len(oblst))
-
