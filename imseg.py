@@ -43,4 +43,3 @@ def segment(arg):
 				# Check for accidentl
 	return (res,objlst)
 
-	
