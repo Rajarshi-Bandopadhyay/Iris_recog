@@ -12,6 +12,7 @@ def segment(arg):
 	rows = arg.shape[0]
 	cols = arg.shape[1]
 	nobj = 0
+	identicals = []
 	for x in range(1,rows-1):
 		for y in range(1,cols-1):
 			if arg[x,y] > 0:
@@ -38,9 +39,12 @@ def segment(arg):
 					objlst[nobj] = []
 					objlst[nobj].append((x,y))
 					res[x,y] = nobj
-					print((x,y))
 				
-				# Check for accidentl
-	return (res,objlst)
+				if res[x,y-1] != 0 and res[x,y-1] != res[x,y]:
+					if not [res[x,y],res[x,y-1]] in identicals:
+						identicals.append([res[x,y],res[x,y-1]])
+		
+		
+	return (res,objlst,identicals)
 
 	
