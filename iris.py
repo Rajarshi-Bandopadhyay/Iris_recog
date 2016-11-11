@@ -8,9 +8,10 @@ from sys import argv
 from morph import *
 from imworks import *
 
+
 def pupil_detect(fname):
 	img = cv2.imread(fname)
-
+	
 	orig = zeros(img.shape)
 	for i in range(img.shape[0]):
 		for j in range(img.shape[1]):
@@ -18,6 +19,7 @@ def pupil_detect(fname):
 				orig[i,j,k] = img[i,j,k]
 
 	pos1 = zeros([img.shape[0],img.shape[1]])
+	pos2 = zeros([img.shape[0],img.shape[1]])
 	im = Image.open(fname)
 	pix = im.load()
 	#cv2.imshow('detected Edge',img)
@@ -32,23 +34,23 @@ def pupil_detect(fname):
 	#print(pix[0,0])
 	for eh in range(height):
 	    for ew in range(width):
-	        r,g,b = pix[ew,eh]
-	        if r<=30 and g<=30 and b<=30:
-		    #print(eh,ew)
-	            cv2.circle(img,(ew,eh),1,(0,255,0),1)
-	            cv2.circle(pos1,(ew,eh),1,255,1)
+	        r,g,b=pix[ew,eh]
+	        if r<=120 and r>30 and g<= 120 and g> 30 and b<= 120 and b>30:
+	            #print(eh,ew)
+	            cv2.circle(img,(ew,eh),1,(255,0,0),1)
+	            cv2.circle(pos2,(ew,eh),1,255,1)
 	
-	# pos1 is the pupil
-	pupil = erode(pos1,15)
-	pupil = dilate(pupil,8)
+	# pos2 is the iris
+	pos2 /= 255
+	iris = dilate(pos2,8)
+	#iris = erode(iris,15)
 	
 	#fig = figure()
 	#ii = fig.add_subplot(121)
 	#pd = fig.add_subplot(122)
 	
 	#ii.imshow(orig/orig.max())
-	#pd.imshow(pupil, cmap="Greys_r")
+	#pd.imshow(iris, cmap="Greys_r")
 	#show()
 	
-	return pupil
-
+	return iris
