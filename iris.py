@@ -45,12 +45,12 @@ def iris_detect(fname):
 	iris = dilate(pos2,15)
 	iris = erode(iris,8)
 	
-	fig = figure()
-	ii = fig.add_subplot(121)
-	pd = fig.add_subplot(122)
+	#fig = figure()
+	#ii = fig.add_subplot(121)
+	#4pd = fig.add_subplot(122)
 	
-	ii.imshow(orig/orig.max())
-	pd.imshow(iris, cmap="Greys_r")
-	show()
+	#ii.imshow(orig/orig.max())
+	#pd.imshow(iris, cmap="Greys_r")
+	#show()
 	
 	return iris

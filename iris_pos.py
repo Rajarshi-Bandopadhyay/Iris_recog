@@ -2,6 +2,7 @@ from pupil import *
 from iris import *
 from numpy import zeros
 from skimage import draw
+from imworks import *
 
 if len(argv) < 2:
 	print('No filename entered as command line argument.')
@@ -51,12 +52,71 @@ lines[rr,cc] = 1
 rr, cc = draw.circle(center_y,center_x,3)
 lines[rr,cc] = 1
 
+#Locating Iris bounding box
+iris_img = iris_detect(fname)
+
+x = east_mark
+while(iris_img[center_y,x]) == 1: x += 1
+iris_east = x
+
+x = west_mark
+while(iris_img[center_y,x]) == 1: x -= 1
+iris_west = x
+
+rr, cc = draw.line(0,iris_east,rows-1,iris_east)
+lines[rr,cc] = 1	
+rr, cc = draw.line(0,iris_west,rows-1,iris_west)
+lines[rr,cc] = 1
+
+# Displaying bounding boxes with lines
 full_color = zeros([rows,cols,3])
 for i in range(rows):
 	for j in range(cols):
 		full_color[i,j,0] = pupil_img[i,j]
 		full_color[i,j,1] = lines[i,j]
-disp(full_color)
 
-iris_img = iris(fname)
-disp(iris_img)
+for i in range(rows):
+	for j in range(cols):
+		full_color[i,j,2] = iris_img[i,j]
+
+print('Eastern distance: ' + str(iris_east - center_x))
+print('Western distance: ' + str(center_x - iris_west))
+#disp(full_color)
+
+# Generating mask:
+radius = max([(iris_east - center_x),(center_x - iris_west)])
+mask = zeros([rows,cols])
+
+rr, cc = draw.circle(center_y, center_x,radius)
+for i in range(len(rr)):
+	if rr[i] < 0: rr[i] = 0
+	if rr[i] >= rows: rr[i] = rows - 1
+for i in range(len(cc)):
+	if cc[i] < 0: cc[i] = 0
+	if cc[i] >= cols: cc[i] = cols - 1
+mask[rr,cc] = 1
+
+rr, cc = draw.circle(center_y, center_x,(0.5*(east_mark-west_mark)))
+for i in range(len(rr)):
+	if rr[i] < 0: rr[i] = 0
+	if rr[i] >= rows: rr[i] = rows - 1
+for i in range(len(cc)):
+	if cc[i] < 0: cc[i] = 0
+	if cc[i] >= cols: cc[i] = cols - 1
+mask[rr,cc] = 0
+
+img = bnw(fname)
+pad = 6
+masked_eye = zeros([img.shape[0]-2*pad,img.shape[1]-2*pad])
+for i in range(rows):
+		for j in range(cols):
+			masked_eye[i,j] = min([mask[i,j],img[pad+i,pad+j]])
+
+check_mask = zeros([rows,cols,3])
+for i in range(rows):
+	for j in range(cols):
+		check_mask[i,j,0] = img[i,j]
+		check_mask[i,j,1] = img[i,j] * 0.6 + 0.4*mask[i-2*pad,j-2*pad]
+		check_mask[i,j,2] = img[i,j] * 0.6 + 0.4*mask[i-2*pad,j-2*pad]
+
+disp(check_mask)
