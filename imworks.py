@@ -8,11 +8,4 @@ def disp(img):
 	imshow(img)
 	show()
 
-# Changeable:
-
-from imseg2 import segment
-from chk import chk
-from superobj import superobj
-img = bnw('test2.png')
-res, oblst, idn = segment(img)
 

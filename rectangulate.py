@@ -2,13 +2,8 @@ from locate import *
 from math import sin, cos, radians
 
 def rectangle(fname):
-	#if len(argv) < 2:
-	#	print('No filename entered.')
-	#	fname = input('Enter filename: ')
-	#fname = argv[1]
 	img = bnw(fname)
 	img = img[22:,22:]
-	disp(img)
 
 	params = locate(fname)
 	Ri = params[0] # Inner (pupil) radius
@@ -27,6 +22,6 @@ def rectangle(fname):
 			dot = img[min([img.shape[0]-1,mapped_point_row]), min([img.shape[1],mapped_point_col])]
 			newmap[r,c] = dot
 
-	print('Center: ( ' + str(x) + ' , ' + str(y) + ' )')
-	disp(newmap)
-	return newmap
+	#print('Center: ( ' + str(x) + ' , ' + str(y) + ' )')
+	#disp(newmap)
+	return newmap[5:44,:]

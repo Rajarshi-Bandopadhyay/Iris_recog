@@ -1,5 +1,5 @@
-from pupil import *
-from iris import *
+from pupil2 import *
+from iris2 import *
 from numpy import zeros
 from skimage import draw
 from imworks import *
