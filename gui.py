@@ -1,4 +1,4 @@
-from tkinter import *
+from tkinter import * 
 import os
 from hamming import *
 import shutil
@@ -31,7 +31,7 @@ def proceed():
 		if not os.path.exists('Input_database/'+owner+'/'+lr+'.bmp'):
 			if not os.path.exists('Input_database/'+owner):
 				os.makedirs('Input_database/'+owner)
-			shutil.copy(image,'Input_database/'+owner+'/'+lr+'.bmp')
+			shutil.copy(image.get(),'Input_database/'+owner+'/'+lr+'.bmp')
 		else:
 			print('Image is already inserted')
 	
