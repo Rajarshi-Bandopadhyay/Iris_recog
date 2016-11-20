@@ -4,7 +4,6 @@ from hamming import *
 import shutil
 
 root = Tk()
-globaltxt = ''
 
 Label(root, text='Do you want to insert or check? ').grid(row=0, column=0, columnspan=2)
 operation = IntVar()
@@ -24,14 +23,7 @@ Label(root, text='Please enter the path of the image file: ').grid(row=8, column
 image = StringVar()
 Entry(root, textvariable=image).grid(row=9, column=0, columnspan=2)
 
-def msgbox():
-	global globaltxt
-	msg = Tk()
-	Label(msg, text=globaltxt).grid(row=0,column=0)
-	Button(msg, text='OK', command=msg.destroy).grid(row=1,column=0)
-
 def proceed():
-	global globaltxt
 	owner = person.get()
 	if eye.get() == 0: lr = 'left'
 	if eye.get() == 1: lr = 'right'
@@ -41,21 +33,17 @@ def proceed():
 				os.makedirs('Input_database/'+owner)
 			shutil.copy(image.get(),'Input_database/'+owner+'/'+lr+'.bmp')
 		else:
-			globaltxt = 'Image is already inserted'
-			msgbox()
+			print('Image is already inserted')
 	
 	if operation.get() == 1:
 		if os.path.exists('Input_database/'+owner+'/'+lr+'.bmp'):
 			verify = same_person_eyes('Input_database/'+owner+'/'+lr+'.bmp',image.get())
 			if verify == True:
-				globaltxt = 'Verified. The images belong to the same eye.'
-				msgbox()
+				print('Verified. The images belong to the same eye.')
 			else:
-				globaltxt = 'Not verified. The images are of two different eyes.'
-				msgbox()
+				print('Not verified. The images are of two different eyes.')
 		else:
-			globaltxt= 'You have not entered your eye image. Please enter earlier'
-			msgbox()
+			print('You have not entered your eye image. Please enter earlier')
 
 Button(root, text="Proceed", command=proceed).grid(row=10, column=0)
 
