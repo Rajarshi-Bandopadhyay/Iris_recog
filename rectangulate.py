@@ -23,5 +23,5 @@ def rectangle(fname):
 			newmap[r,c] = dot
 
 	#print('Center: ( ' + str(x) + ' , ' + str(y) + ' )')
-	#disp(newmap)
+	disp(newmap)
 	return newmap[5:44,:]

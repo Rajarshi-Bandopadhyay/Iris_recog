@@ -47,9 +47,10 @@ def iris_detect(fname):
 	
 	#fig = figure()
 	#ii = fig.add_subplot(121)
-	#4pd = fig.add_subplot(122)
+	#pd = fig.add_subplot(122)
 	
 	#ii.imshow(orig/orig.max())
+	#ii.imshow(pos2, cmap="Greys_r")
 	#pd.imshow(iris, cmap="Greys_r")
 	#show()
 	

@@ -47,6 +47,7 @@ def pupil_detect(fname):
 	#pd = fig.add_subplot(122)
 	
 	#ii.imshow(orig/orig.max())
+	#ii.imshow(pos1,cmap="Greys_r")
 	#pd.imshow(pupil, cmap="Greys_r")
 	#show()
 	
