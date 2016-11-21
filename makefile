@@ -8,3 +8,4 @@ test: test_checker.py
 	
 clean: *.pyc
 	rm -r *.pyc
+	rm -rf __pycache__/
