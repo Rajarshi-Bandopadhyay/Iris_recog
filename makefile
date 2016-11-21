@@ -1,5 +1,7 @@
-start: main.py
-	python main.py
+start: setup.sh
+	chmod a+x setup.sh
+	./setup.sh
+	
 	
 test: test_checker.py
 	python test_checker.py
