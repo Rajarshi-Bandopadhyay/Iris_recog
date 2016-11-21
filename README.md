@@ -36,7 +36,7 @@ This is an Iris Detection project for the subject AE663 in our college. The proj
     - Soumallya Chatterjee [sbchat13@gmail.com]
     - Rajarshi Bandopadhyay [theocrat93@gmail.com]
     
-    [Scikit-Image installation help] <http://www.lfd.uci.edu/~gohlke/pythonlibs/#scikit-image>
-    [Tkinter installation for Python 3] <http://tkinter.unpythonic.net/wiki/How_to_install_Tkinter>
-    [sbchat13@gmail.com] <sbchat13@gmail.com>
-    [theocrat93@gmail.com] <theocrat93@gmail.com>
+    [Scikit-Image installation help]: <http://www.lfd.uci.edu/~gohlke/pythonlibs/#scikit-image>
+    [Tkinter installation for Python 3]: <http://tkinter.unpythonic.net/wiki/How_to_install_Tkinter>
+    [sbchat13@gmail.com]: <sbchat13@gmail.com>
+    [theocrat93@gmail.com]: <theocrat93@gmail.com>
