@@ -8,14 +8,14 @@ This is an Iris Detection project for the subject AE663 in our college. The proj
 1. Python 3.5 or compatible.
 2. Scikit-Image, available with the following shell command:
     - Linux and MacOS users: pip install -U scikit-image
-    - Windows: instructions are available at [Scikit-Image installation help]
+    - Windows: instructions are available at <http://www.lfd.uci.edu/~gohlke/pythonlibs/#scikit-image>.
 3. OpenCV, of which a specific version has been used.(this will be changed in future upgrades)
     - Ubuntu users can run the Makefile and obtain the relevant software. The download will take several hours and a lot of disk space.
     - Other OS implementations have not been done yet, but we are planning to scrap the use of PIL and OpenCV, and replace both by Scikit-Image only. (this may need some time and work).
 4. Tkinter for Python 3.5, available with the following shell command:
     - Ubuntu/Debian users may use the command: **sudo apt-get install python python-tk idle python-pmw python-imaging**
     - Fedora users may use **yum install tkinter**.
-    - Further details are available at the url [Tkinter installation for Python 3].
+    - Further details are available at the url <http://tkinter.unpythonic.net/wiki/How_to_install_Tkinter>.
 
 ### Files in this project:
 
@@ -33,10 +33,5 @@ This is an Iris Detection project for the subject AE663 in our college. The proj
 ### Contact us:
 
 1. Our email addresses are as follows:
-    - Soumallya Chatterjee [sbchat13@gmail.com]
-    - Rajarshi Bandopadhyay [theocrat93@gmail.com]
-    
-    [Scikit-Image installation help]: <http://www.lfd.uci.edu/~gohlke/pythonlibs/#scikit-image>
-    [Tkinter installation for Python 3]: <http://tkinter.unpythonic.net/wiki/How_to_install_Tkinter>
-    [sbchat13@gmail.com]: <sbchat13@gmail.com>
-    [theocrat93@gmail.com]: <theocrat93@gmail.com>
+    - Soumallya Chatterjee: sbchat13@gmail.com
+    - Rajarshi Bandopadhyay: theocrat93@gmail.com
