@@ -1,0 +1,150 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang=".rst">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Iris based Biometric identification system &mdash; SDES 0.1.1 documentation</title>
+    
+    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '0.1.1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="top" title="SDES 0.1.1 documentation" href="#" />
+    <link rel="next" title="Main Program" href="main.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head>
+  <body role="document">
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="iris-based-biometric-identification-system">
+<h1>Iris based Biometric identification system<a class="headerlink" href="#iris-based-biometric-identification-system" title="Permalink to this headline">¶</a></h1>
+<p>Here we are trying to implement a Iris based biometric identification which can verify the eye image for a person by comapring that eye image withh the stored eye images for that person belonging to a particular image databse. For our work we have a directory named &#8220;Input_databse&#8221; works as the image databse. This directory contain many directories where name of each subdirectory corresponds to name of each person of whom the eye iamge is stored in that directory. Each subdirectory contains an image for the left eye for that person and an image for the right eye of that person. Besides checking we have kept a provision so that when a new person wants to enter his/her eye image then that eye image will be stored in a subdirectory corresponding to the name of that new person.</p>
+<p><strong>Inbuilt modules:</strong></p>
+<blockquote>
+<div><p>skiimage</p>
+<p>PIL</p>
+<p>OpenCV or cv2</p>
+<p>numpy</p>
+<p>matplotlib</p>
+</div></blockquote>
+<p><strong>Contents:</strong></p>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="main.html">Main Program</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="main.html#parameters">Parameters</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="imworks.html">Imworks</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="imworks.html#bnw">bnw</a></li>
+<li class="toctree-l2"><a class="reference internal" href="imworks.html#disp">disp</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="iris.html">Iris</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="iris.html#iris-detect">iris_detect</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="pupil.html">Pupil</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="pupil.html#pupil-detect">pupil_detect</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="locate.html">Locate</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="locate.html#id1">locate</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="morph.html">Morph</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="morph.html#erode">erode</a></li>
+<li class="toctree-l2"><a class="reference internal" href="morph.html#dilate">dilate</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="rectangulate.html">Rectangulate</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="rectangulate.html#id1">rectangulate</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="feature_vec.html">Feature_vec</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="feature_vec.html#engroup">engroup</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="hamming.html">Hamming</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="hamming.html#hamming-check-string">hamming_check_string</a></li>
+<li class="toctree-l2"><a class="reference internal" href="hamming.html#same-person-eyes">same_person_eyes</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="gui.html">GUI</a></li>
+</ul>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper"><div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="#">Documentation overview</a><ul>
+      <li>Next: <a href="main.html" title="next chapter">Main Program</a></li>
+  </ul></li>
+</ul>
+</div>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/index.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Go" /></div>
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2016, Soumallya.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.4.4</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.8</a>
+      
+      |
+      <a href="_sources/index.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>
