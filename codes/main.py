@@ -33,18 +33,18 @@ eye = str(input('Left eye or right eye: ')).lower()
 image = str(input('Insert the image: '))
 
 if operation == 'insert':
-    if not os.path.exists('Input_database/'+person+'/'+eye+'.bmp'):
-        if not os.path.exists('Input_database/'+person):
-            os.makedirs('Input_database/'+person)
-        shutil.copy(image, 'Input_database/'+person+'/'+eye+'.bmp')
+    if not os.path.exists('..' + os.sep + 'Input_database/'+person + os.sep + eye + '.bmp'):
+        if not os.path.exists('../Input_database/'+person):
+            os.makedirs('../Input_database/'+person)
+        shutil.copy(image, '../Input_database/'+person+'/'+eye+'.bmp')
     else:
         print('Image is already inserted')
 
 	
 if operation == 'check':
-    if os.path.exists('Input_database/'+person+'/'+eye+'.bmp'):
+    if os.path.exists('../Input_database/'+person+'/'+eye+'.bmp'):
         verify = \
-        same_person_eyes('Input_database/'+person+'/'+eye+'.bmp', image)
+        same_person_eyes('../Input_database/'+person+'/'+eye+'.bmp', image)
         if verify is True:
             print('Verified. The images belong to the same eye.')
         else:

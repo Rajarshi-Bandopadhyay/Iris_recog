@@ -6,6 +6,6 @@ start: setup.sh
 test: test_checker.py
 	python test_checker.py
 	
-clean: *.pyc
-	rm -r *.pyc
-	rm -rf __pycache__/
+clean: 
+	cd codes && rm -rf __pycache__/
+	cd codes && rm -r *.pyc

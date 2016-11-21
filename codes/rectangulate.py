@@ -23,7 +23,7 @@ def rectangle(fname):
 
     img = bnw(fname)
     img = img[22:, 22:]
-    disp(img)
+    #disp(img)
     params = locate(fname)
     Ri = params[0]  # Inner (pupil) radius
     Ro = params[1]  # Outer (iris) radius
@@ -40,6 +40,6 @@ def rectangle(fname):
             dot = img[min([img.shape[0]-1, mapped_point_row]), min([img.shape[1], mapped_point_col])]
             newmap[r, c] = dot
     print('Center: ( ' + str(x) + ' , ' + str(y) + ' )')
-    disp(newmap)
+    #disp(newmap)
     return newmap
     
