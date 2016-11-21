@@ -21,7 +21,8 @@ This is an Iris Detection project for the subject AE663 in our college. The proj
 
 1. The project is in Python, and all Python scripts are included in the **codes** folder.
     - The files **main.py**, **gui.py** and **iris_pos.py** are end testing files. See the **Automation and database experiment** section of this README.
-2. The documentation of all the files is in 
+2. The project can be tested using Unit-Test code in the file **test_checker.py**.
+3. The documentation of all the files have been generated using **Sphinx** and are in the **documentation** folder, in HTML format.
 
 ### Automation and database experiment:
 
